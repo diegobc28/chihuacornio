@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chihuacornio · Chihuahua Tech Week 2026</title>
+  <meta name="description" content="Ponle tu logo al Chihuacornio, la mascota oficial de Chihuahua Tech Week 2026, y descarga tu versión personalizada." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Personaliza al Chihuacornio · Chihuahua Tech Week 2026" />
+  <meta property="og:description" content="Sube tu logo, póntelo en la playera del Chihuacornio y descárgalo. La mascota de la ciudad, a tu estilo." />
+  <meta property="og:image" content="assets/chihuacornio-sample.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="assets/chihuacornio-sample.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/chihuacornio-sample.png" alt="Chihuacornio" class="brand-mark" />
+      <div class="brand-text">
+        <strong>Chihuacornio</strong>
+        <span>Chihuahua Tech Week 2026</span>
+      </div>
+    </div>
+    <a class="header-cta" href="#estudio">Crear el mío ↓</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Mascota oficial · Chihuahua Tech Week 2026</span>
+        <h1>El <span class="grad">Chihuacornio</span> es de toda la ciudad.<br />Ponle tu logo.</h1>
+        <p class="lead">
+          Sube el logo de tu startup, comunidad o empresa, acomódalo en la playera
+          y descarga tu Chihuacornio listo para presumir. Sin diseñador, sin esperas.
+        </p>
+        <a class="btn btn-primary btn-lg" href="#estudio">Personalizar mi Chihuacornio</a>
+        <p class="micro">Gratis · Se procesa en tu navegador · Tu logo no se sube a ningún servidor</p>
+      </div>
+      <div class="hero-art">
+        <img src="assets/chihuacornio-sample.png" alt="Chihuacornio con playera de Chihuahua Tech Week" />
+      </div>
+    </section>
+
+    <!-- ESTUDIO -->
+    <section id="estudio" class="studio">
+      <h2 class="section-title">Tu estudio del Chihuacornio</h2>
+      <p class="section-sub">Arrastra para mover · pellizca o usa el deslizador para escalar · descarga en alta resolución.</p>
+
+      <div class="studio-grid">
+        <!-- CANVAS -->
+        <div class="stage-wrap">
+          <div class="stage" id="stage">
+            <canvas id="canvas" width="1080" height="1350"></canvas>
+            <div class="drop-hint" id="dropHint">
+              <div class="drop-hint-inner">
+                <span class="drop-emoji">🦄</span>
+                <strong>Suelta tu logo aquí</strong>
+                <span>o usa el botón de la derecha</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CONTROLES -->
+        <aside class="controls">
+          <div class="control-card">
+            <h3>1. Sube tu logo</h3>
+            <p class="hint">PNG con fondo transparente se ve mejor. También sirve JPG.</p>
+            <label class="btn btn-primary btn-block" for="fileInput">Elegir logo</label>
+            <input type="file" id="fileInput" accept="image/png,image/jpeg,image/svg+xml,image/webp" hidden />
+            <button class="btn btn-ghost btn-block" id="sampleBtn" type="button">Probar con un logo de ejemplo</button>
+          </div>
+
+          <div class="control-card" id="adjustCard" hidden>
+            <h3>2. Ajusta</h3>
+
+            <label class="slider-row">
+              <span>Tamaño</span>
+              <input type="range" id="scale" min="0.2" max="2.5" step="0.01" value="1" />
+            </label>
+
+            <label class="slider-row">
+              <span>Rotación</span>
+              <input type="range" id="rotate" min="-30" max="30" step="1" value="0" />
+            </label>
+
+            <label class="slider-row">
+              <span>Opacidad</span>
+              <input type="range" id="opacity" min="0.3" max="1" step="0.01" value="1" />
+            </label>
+
+            <label class="toggle-row">
+              <input type="checkbox" id="blendToggle" />
+              <span>Efecto estampado en tela <em>(multiplicar)</em></span>
+            </label>
+
+            <button class="btn btn-ghost btn-block" id="resetBtn" type="button">Centrar y reiniciar</button>
+            <button class="btn btn-danger-ghost btn-block" id="removeBtn" type="button">Quitar logo</button>
+          </div>
+
+          <div class="control-card">
+            <h3>3. Descarga</h3>
+            <p class="hint">Imagen PNG de 1080×1350, lista para redes.</p>
+            <button class="btn btn-success btn-block btn-lg" id="downloadBtn" type="button">Descargar mi Chihuacornio</button>
+            <button class="btn btn-ghost btn-block" id="shareBtn" type="button" hidden>Compartir</button>
+          </div>
+
+          <p class="privacy-note">🔒 Todo ocurre en tu dispositivo. Tu logo nunca sale de tu navegador.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PASOS -->
+    <section class="steps">
+      <div class="step"><span class="step-num">1</span><h4>Sube tu logo</h4><p>Arrástralo al Chihuacornio o elígelo desde tu dispositivo.</p></div>
+      <div class="step"><span class="step-num">2</span><h4>Acomódalo</h4><p>Muévelo, escálalo y gíralo hasta que quede perfecto en la playera.</p></div>
+      <div class="step"><span class="step-num">3</span><h4>Descarga y presume</h4><p>Bájalo en alta resolución y compártelo con #ChihuahuaTechWeek.</p></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p><strong>Chihuacornio</strong> — mascota oficial de Chihuahua Tech Week 2026 🦄</p>
+    <p class="footer-micro">Hecho con cariño en Chihuahua. Usa el Chihuacornio para celebrar la comunidad tech de la ciudad.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
