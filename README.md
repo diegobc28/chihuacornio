@@ -12,6 +12,28 @@ su versión personalizada en alta resolución.
 
 Todo el procesamiento ocurre **en el navegador del usuario**. Ningún logo se sube a un servidor.
 
+## 🔐 Acceso por invitación (códigos de aliado)
+
+El sitio está cerrado: cada persona necesita un **código** para entrar. Sirve para dar
+acceso solo a los aliados aprobados de la Tech Week.
+
+- Los códigos válidos viven **hasheados** (SHA-256) en `codes.js` — no se ven en texto plano.
+- La lista de códigos en texto plano está en `codigos-aliados.txt`, que **no se sube a git**
+  (está en `.gitignore`). Ahí anotas a quién le diste cada código.
+- Una vez que un aliado entra, su dispositivo lo recuerda (no se le vuelve a pedir).
+
+Es una "puerta suave": da exclusividad y control, pero no es seguridad criptográfica fuerte
+(el contenido es un editor de imágenes, no datos sensibles).
+
+### Generar / regenerar el lote de códigos
+
+```bash
+python3 tools/gen-codigos.py        # crea codes.js + codigos-aliados.txt
+```
+
+Para **revocar** un código: borra su hash de `codes.js` y vuelve a desplegar.
+Para **añadir** más: regenera el lote o agrega a mano el hash de un código nuevo.
+
 ## 🛠️ Stack
 
 HTML + CSS + JavaScript puro, sin dependencias ni build. El compositing se hace con `<canvas>`.

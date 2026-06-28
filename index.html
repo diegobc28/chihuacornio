@@ -20,6 +20,31 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- PUERTA DE ACCESO -->
+  <div class="gate" id="gate">
+    <div class="gate-card">
+      <img src="assets/chihuacornio-sample.png" alt="Chihuacornio" class="gate-mascot" />
+      <span class="gate-eyebrow">Acceso para aliados · Chihuahua Tech Week 2026</span>
+      <h1 class="gate-title">El <span class="grad">Chihuacornio</span> es por invitación</h1>
+      <p class="gate-sub">Introduce tu código de aliado para personalizar y descargar tu Chihuacornio.</p>
+      <form id="gateForm" class="gate-form" autocomplete="off">
+        <input
+          id="gateInput"
+          class="gate-input"
+          type="text"
+          inputmode="text"
+          placeholder="CHTW26-XXXXX"
+          aria-label="Código de acceso"
+          spellcheck="false"
+          autofocus
+        />
+        <button id="gateSubmit" class="btn btn-primary btn-lg gate-btn" type="submit">Entrar</button>
+        <p id="gateError" class="gate-error" role="alert"></p>
+      </form>
+      <p class="gate-foot">¿Quieres ser aliado y tener tu código? Escríbenos a la organización de Chihuahua Tech Week.</p>
+    </div>
+  </div>
+
   <header class="site-header">
     <div class="brand">
       <img src="assets/chihuacornio-sample.png" alt="Chihuacornio" class="brand-mark" />
@@ -132,6 +157,8 @@
     <p class="footer-micro">Hecho con cariño en Chihuahua. Usa el Chihuacornio para celebrar la comunidad tech de la ciudad.</p>
   </footer>
 
+  <script src="codes.js"></script>
+  <script src="gate.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
